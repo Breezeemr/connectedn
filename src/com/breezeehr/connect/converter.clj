@@ -3,7 +3,7 @@
             [clojure.java.io :as io])
   (:import (java.io ByteArrayOutputStream)))
 
-(defn write [{:keys [encoding] :as config} data]
+(defn read [{:keys [encoding] :as config} data]
   (edn/read-string (io/reader data :encoding (or encoding "UTF-8"))))
 
 (defn write [{:keys [encoding] :as config} schema data]
